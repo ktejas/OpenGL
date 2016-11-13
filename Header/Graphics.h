@@ -3,6 +3,7 @@
 #define GRAPHICS_H
 
 #include "OGL.h"
+#include "SpriteBatch.h"
 
 static bool FULL_SCREEN = false;
 static bool VSYNC_ENABLED = true;
@@ -17,7 +18,7 @@ public:
 	bool InitializeOGL(HWND pHWND);
 
 	//Initialize graphics class
-	//bool Initialize();
+	void Initialize();
 
 	//Begin Scene
 	void BeginScene(float red, float green, float blue, float alpha);
@@ -28,11 +29,16 @@ public:
 	//Get OpenGL object
 	OGL * GetOpenGL();
 
+	//Get SpriteBatch
+	SpriteBatch* GetSriteBatch();
+
 	//Release the memory
 	void Release();
 
 private:
 	OGL * m_ogl;
+
+	SpriteBatch* m_spriteBatch;
 };
 
 #endif

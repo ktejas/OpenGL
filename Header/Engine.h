@@ -29,8 +29,11 @@ public:
 
 private:
 	Engine();
+
 	static Engine * m_engine;
 	Graphics * m_graphics;
+
+	SpriteBatch* m_sb;
 };
 
 #endif

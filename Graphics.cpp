@@ -3,6 +3,7 @@
 Graphics::Graphics()
 {
 	m_ogl = NULL;
+	m_spriteBatch = NULL;
 }
 
 Graphics::~Graphics()
@@ -25,6 +26,12 @@ bool Graphics::InitializeOGL(HWND pHWND)
 	}
 
 	return true;
+}
+
+void Graphics::Initialize()
+{
+	m_spriteBatch = new SpriteBatch();
+	m_spriteBatch->Initialize();
 }
 
 void Graphics::BeginScene(float red, float green, float blue, float alpha)
@@ -50,4 +57,14 @@ void Graphics::Release()
 		delete m_ogl;
 		m_ogl = NULL;
 	}
+
+	if (m_spriteBatch)
+	{
+		delete m_spriteBatch;
+	}
+}
+
+SpriteBatch* Graphics::GetSriteBatch()
+{
+	return m_spriteBatch;
 }

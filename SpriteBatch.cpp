@@ -13,15 +13,15 @@ SpriteBatch::~SpriteBatch()
 {
 	if (m_vertexBufferID)
 	{
-		glDeleteBuffers(m_vertexBufferID);
+		glDeleteBuffers(1, &m_vertexBufferID);
 	}
 	if (m_texBufferID)
 	{
-		glDeleteBuffers(m_texBufferID);
+		glDeleteBuffers(1, &m_texBufferID);
 	}
 	if (m_indexBufferID)
 	{
-		glDeleteBuffers(m_indexBufferID);
+		glDeleteBuffers(1, &m_indexBufferID);
 	}
 	if (m_vertexArrayID)
 	{
@@ -71,8 +71,10 @@ void SpriteBatch::Draw(RecTangle &pRect)
 	uv[3] = Vector2(1.0f, 1.0f);
 
 	glBindVertexArray(m_vertexArrayID);
+
 	glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID);
 	glBufferData(GL_ARRAY_BUFFER, 4 * sizeof(Vector3), verts, GL_STATIC_DRAW);
+	
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, false, sizeof(Vector3), 0);
 

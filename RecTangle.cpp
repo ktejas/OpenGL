@@ -16,6 +16,11 @@ RecTangle::RecTangle(float _left, float _top, float _width, float _height)
 	m_height = _height;
 }
 
+RecTangle::~RecTangle()
+{
+	
+}
+
 float RecTangle::GetLeft()
 {
 	return m_left;
