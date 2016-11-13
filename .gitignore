@@ -27,3 +27,14 @@
 *.exe
 *.out
 *.app
+
+# Temporary Files
+#================
+
+/Debug
+/Release
+/x64
+/x86
+
+# Resource files
+/Resources
