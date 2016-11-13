@@ -59,8 +59,35 @@ void SpriteBatch::Draw(RecTangle &pRect)
 	float bottom = top + pRect.GetBottom();
 
 	verts[0] = Vector3(left, top, 0.0f);
-	verts[1] = Vector3(right, top, 0.0f);
-	verts[2] = Vector3(left, bottom, 0.0f);
-	verts[3] = Vector3(right, bottom, 0.0f);
+	uv[0] = Vector2(0.0f, 0.0f);
 
+	verts[1] = Vector3(right, top, 0.0f);
+	uv[1] = Vector2(1.0f, 0.0f);
+
+	verts[2] = Vector3(left, bottom, 0.0f);
+	uv[2] = Vector2(0.0f, 1.0f);
+
+	verts[3] = Vector3(right, bottom, 0.0f);
+	uv[3] = Vector2(1.0f, 1.0f);
+
+	glBindVertexArray(m_vertexArrayID);
+	glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID);
+	glBufferData(GL_ARRAY_BUFFER, 4 * sizeof(Vector3), verts, GL_STATIC_DRAW);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, false, sizeof(Vector3), 0);
+
+	glBindBuffer(GL_ARRAY_BUFFER, m_texBufferID);
+	glBufferData(GL_ARRAY_BUFFER, 4 * sizeof(Vector2), uv, GL_STATIC_DRAW);
+
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(1, 2, GL_FLOAT, false, sizeof(Vector2), 0);
+
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_indexBufferID);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_indicesCount * sizeof(U32), indices, GL_STATIC_DRAW);
+
+	glDrawElements(GL_TRIANGLES, m_indicesCount, GL_UNSIGNED_INT, 0);
+
+	glBindVertexArray(0);
+	glDisableVertexAttribArray(0);
+	glDisableVertexAttribArray(1);
 }
