@@ -3,6 +3,7 @@
 #define ENGINE_H
 
 #include "Graphics.h"
+#include "ShaderManager.h"
 
 class Engine
 {
@@ -32,8 +33,7 @@ private:
 
 	static Engine * m_engine;
 	Graphics * m_graphics;
-
-	SpriteBatch* m_sb;
+	ShaderManager* m_shaderManager;
 };
 
 #endif

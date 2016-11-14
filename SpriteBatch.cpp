@@ -53,10 +53,10 @@ void SpriteBatch::Draw(RecTangle &pRect)
 	indices[4] = 2;
 	indices[5] = 3;
 
-	float left = -(pRect.GetRight() / 2.0f);
-	float right = left + pRect.GetRight();
-	float top = -(pRect.GetBottom() / 2.0f);
-	float bottom = top + pRect.GetBottom();
+	float left = pRect.GetLeft() - (pRect.GetWidth() / 2.0f);
+	float right = left + pRect.GetWidth();
+	float top = pRect.GetTop() - (pRect.GetHeight() / 2.0f);
+	float bottom = top + pRect.GetHeight();
 
 	verts[0] = Vector3(left, top, 0.0f);
 	uv[0] = Vector2(0.0f, 0.0f);

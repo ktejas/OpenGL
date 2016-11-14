@@ -173,6 +173,8 @@
     <ClCompile Include="MathCore.cpp" />
     <ClCompile Include="OGL.cpp" />
     <ClCompile Include="RecTangle.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="ShaderManager.cpp" />
     <ClCompile Include="SpriteBatch.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
@@ -181,6 +183,8 @@
     <ClInclude Include="Header\FrameWork.h" />
     <ClInclude Include="Header\MathCore.h" />
     <ClInclude Include="Header\RecTangle.h" />
+    <ClInclude Include="Header\Shader.h" />
+    <ClInclude Include="Header\ShaderManager.h" />
     <ClInclude Include="Header\SpriteBatch.h" />
     <ClInclude Include="Header\SystemDefs.h" />
     <ClInclude Include="Header\Graphics.h" />

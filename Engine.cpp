@@ -7,7 +7,7 @@ Engine* Engine::m_engine = NULL;
 Engine::Engine()
 {
 	m_graphics = NULL;
-	m_sb = NULL;
+	m_shaderManager = NULL;
 }
 
 Engine::~Engine()
@@ -27,6 +27,8 @@ bool Engine::InitializeGraphics(HWND pHWND)
 void Engine::Initialize()
 {
 	m_graphics->Initialize();
+
+	m_shaderManager->Initialize();
 }
 
 //Updates and Renders the engine
@@ -61,9 +63,9 @@ void Engine::Release()
 		m_engine = NULL;
 	}
 
-	if (m_sb)
+	if (m_shaderManager)
 	{
-		delete m_sb;
+		delete m_shaderManager;
 	}
 }
 
