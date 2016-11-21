@@ -1,6 +1,0 @@
-#version 400
-
-//////////////////////
-//Inut Variables//
-/////////////////////
-in vec3 inputPosition

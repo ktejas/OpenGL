@@ -1,41 +1,30 @@
-# Compiled Object files
-*.slo
-*.lo
+*/build/*
+*/dist/*
+*/nbproject/private/*
+/.project
 *.o
-*.obj
+*.gz
+*.ilk
+*.pdb
+*.tlog
+*.manifest
+*.res
+*.user
+*.lastbuildstate
 *.sdf
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
+*.suo
+*.rc
 *.exe
-*.out
-*.app
+/*.log
+*.cache
+*.idb
+Makefile-Release.mk
+*.obj
 
-# Temporary Files
-#================
+*.log
 
-/Debug
-/Release
-/x64
-/x86
+*.ipch
 
-# Resource files
-/Resources
+*.unsuccessfulbuild
+
+*.opensdf
